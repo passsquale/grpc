@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package passsquale.grpc.random_service;
+
+option go_package = "pkg/random-service;random_service";
+
+service Random{
+  rpc GetRandom(RandomParams) returns (RandomInt);
+  rpc GetDate(RequestDateTime) returns (DateTime);
+  rpc GetRandomPass(RequestPass) returns (RandomPass);
+}
+
+message RandomParams{
+  int64 Max = 1;
+  int64 Min = 2;
+}
+message RandomInt{
+  int64 Value = 1;
+}
+
+message DateTime{
+  string Value = 1;
+}
+message RequestDateTime{
+  string Value = 1;
+}
+
+message RequestPass{
+  int64 Seed = 1;
+  int64 Length = 2;
+}
+message RandomPass{
+  string Password = 1;
+}
