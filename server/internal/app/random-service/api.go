@@ -1,11 +1,11 @@
 package random_service
 
-import desc "github.com/passsquale/grpc/server/pkg/random-service"
+import random_service "github.com/passsquale/grpc/server/pkg/random-service"
 
 type Implementation struct {
-	desc.UnimplementedRandomServer
+	random_service.UnimplementedRandomServer
 }
 
-func NewRandomService() desc.RandomServer {
+func NewRandomService() random_service.RandomServer {
 	return &Implementation{}
 }
